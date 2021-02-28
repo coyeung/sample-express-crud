@@ -19,9 +19,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // Models
-const ConsultationModel = require("./consultations.js");
-db.consultations = new ConsultationModel(sequelize, Sequelize);
-const UserModel = require("./users.js");
-db.users = new UserModel(sequelize, Sequelize);
+db.consultations = require("./consultations.js")(sequelize, Sequelize);
+db.users = require("./users.js")(sequelize, Sequelize);
 
 module.exports = db;

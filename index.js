@@ -5,10 +5,11 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost"
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -30,7 +31,7 @@ try {
 }
 
 // simple route
-require("./app/routes/testPage.route")(app, db);
+require("./app/routes/api.route")(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to sample application." });
