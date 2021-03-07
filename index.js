@@ -26,6 +26,7 @@ try {
     // db.sequelize.sync({ force: true }).then(() => {
     //     console.log("Drop and re-sync db.");
     // });
+    db.sequelize.sync();
 } catch (error) {
     console.error('Unable to connect to the database:', error);
 }
